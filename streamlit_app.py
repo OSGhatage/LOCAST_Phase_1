@@ -282,7 +282,7 @@ def calculate_suitability(inputs, stage):
     elif danger_percentage >= 50:
         return "MODERATE DANGER", "🟡", "danger-moderate"
     else:
-        return "SAFE CONDITIONS", "🟢", "safe"
+        return "NO DANGER", "🟢", "safe"
 
 def render_chart(inputs, stage):
     """Render Plotly bar chart for parameter suitability"""
@@ -662,7 +662,7 @@ def main():
         st.markdown(f"""
         <div class="result-container {css_class}">
             {emoji} {danger_level}<br>
-            <span style="font-size: 1.0rem;">Suitable for {stage} Stage</span>
+            <span style="font-size: 1.0rem;">form {stage} Stage</span>
         </div>
         """, unsafe_allow_html=True)
         
@@ -730,7 +730,7 @@ def main():
         **Threat Assessment:**
         - **HIGH DANGER**: 80%+ parameters in locust-favorable range
         - **MODERATE DANGER**: 50-79% parameters in locust-favorable range
-        - **SAFE CONDITIONS**: <50% parameters in locust-favorable range
+        - **NO DANGER**: <50% parameters in locust-favorable range
         
         **Color Coding:**
         - 🔴 Red Zone: Conditions suitable for locust development (DANGEROUS)

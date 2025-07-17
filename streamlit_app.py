@@ -24,8 +24,10 @@ if 'show_organizations' not in st.session_state:
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Glacial+Indifference:wght@700&display=swap');
+    body, .main-header {
+        background: #ffdb99 !important;
+    }
     .main-header {
-        background: linear-gradient(135deg, #ffbd59 0%, #ffdb99 50%, #ffcc80 100%);
         padding: 2rem;
         border-radius: 10px;
         margin-bottom: 2rem;
@@ -37,7 +39,7 @@ st.markdown("""
         margin: 0;
         font-size: 3rem;
         font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
+        font-weight: 400;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     .tagline {
@@ -73,22 +75,22 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     .danger-high {
-        background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+        background: #ffcdd2;
         color: #c62828;
         border: 3px solid #e57373;
     }
     .danger-moderate {
-        background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
+        background: #ffcc02;
         color: #ef6c00;
         border: 3px solid #ffb74d;
     }
     .safe {
-        background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+        background: #c8e6c9;
         color: #2e7d32;
         border: 3px solid #81c784;
     }
     .info-button {
-        background: linear-gradient(135deg, #ffbd59 0%, #ffdb99 100%);
+        background: #ffdb99;
         color: #ffffff;
         border: none;
         padding: 0.8rem 1.5rem;
@@ -117,7 +119,7 @@ st.markdown("""
         height: auto;
     }
     .alert-banner {
-        background: linear-gradient(135deg, #ffbd59 0%, #ff9800 100%);
+        background: #ffdb99;
         color: #ffffff;
         padding: 1rem;
         border-radius: 10px;
@@ -660,7 +662,7 @@ def main():
         st.markdown(f"""
         <div class="result-container {css_class}">
             {emoji} {danger_level}<br>
-            <span style="font-size: 1.1rem;">for {stage} Stage</span>
+            <span style="font-size: 1.0rem;">Suitable for {stage} Stage</span>
         </div>
         """, unsafe_allow_html=True)
         
